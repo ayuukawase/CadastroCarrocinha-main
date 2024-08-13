@@ -23,6 +23,7 @@ CREATE TABLE pessoa
     id          INT AUTO_INCREMENT,
     nome        VARCHAR(100),
     email       VARCHAR(100),
+    senha       VARCHAR(50)
     endereco    VARCHAR(100),
     bairro      VARCHAR(100),
     id_cidade   INT,
@@ -38,6 +39,7 @@ CREATE TABLE animal
     nome        VARCHAR(100),
     especie     VARCHAR(100),
     raca        VARCHAR(100),
+    foto        VARCHAR(100)
     data_nascimento     DATE,
     castrado   BOOL,
     id_pessoa   INT,

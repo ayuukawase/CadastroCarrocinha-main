@@ -48,7 +48,7 @@
         <div class="principal flex inverter_column">
             <?php
             include('../includes/conexao.php');
-            $sql ="SELECT FLOOR(datediff(curdate(), data_nascimento) / 365) as idade, ani.id, ani.nome nomeAnimal, ani.especie,ani.raca, ani.data_nascimento, ani.castrado, don.nome nomeDono, don.email FROM animal ani LEFT JOIN pessoa don ON don.id = ani.id_pessoa";
+            $sql ="SELECT FLOOR(datediff(curdate(), data_nascimento) / 365) as idade, ani.id, ani.nome nomeAnimal, ani.especie,ani.raca, ani.data_nascimento, ani.castrado, don.nome nomeDono, don.email, foto FROM animal ani LEFT JOIN pessoa don ON don.id = ani.id_pessoa";
             // Executa a consulta
             $result = mysqli_query($con, $sql);
             ?>
@@ -79,6 +79,12 @@
                         $idade = $idadeOb->format('%Y');*/
                         echo "<tr>";
                         echo "<td>" . $row['id'] . "</td>";
+                        if($row['foto'] == "") {
+                            echo "<td></td>";
+                        }
+                        else {
+                            echo "<td><img src='".$row['foto']."' width='80' height='100'/></td>";
+                        }
                         echo "<td>" . $row['nomeAnimal'] . "</td>";
                         echo "<td>" . $row['especie'] . "</td>";
                         echo "<td>" . $row['raca'] . "</td>";
