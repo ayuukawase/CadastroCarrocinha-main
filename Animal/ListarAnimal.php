@@ -57,6 +57,7 @@
                 <thead>
                     <tr>
                         <th>Código</th>
+                        <th>Foto</th>
                         <th>Nome</th>
                         <th>Espécie</th>
                         <th>Raça</th>
